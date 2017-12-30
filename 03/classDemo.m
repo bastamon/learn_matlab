@@ -1,0 +1,28 @@
+%demo
+close all; clear all;
+FGI=figure('Position',[200 200 700 500],'Name','Figure Demo','NumberTitle','off','ToolBar','none','color',[0.8 0.8 0.8]);
+pause;
+x=[0:0.2:4.8];
+y=2*sign(rand(1,length(x))-0.5).*rand(1,length(x));
+plot(x,y,'--rs','MarkerSize',14,'LineWidth',2);
+pause;
+set(gca,'fontsize',14,'fontname','Times New Roman','color','y');
+pause;
+grid on;
+pause;
+hold on;
+xlabel('\it S_i','fontsize',16,'fontweight','b','fontname','Arial');
+ylabel('\it R^V','fontsize',16,'fontweight','b','fontname','Arial');
+pause;
+hold on;
+T=0.5;k=8;dt=0.3;
+t=T:dt:5;
+f=log(1+k*(t-T)/(1-T))/log((k+1));
+plot(t,f,'-bo','MarkerSize',14,'MarkerEdgeColor','k','MarkerFaceColor','g','LineWidth',2);
+hold off;
+pause;
+axis([-0.5 5.5 -2.5 2.5]);
+set(gca,'XTick',[-0.5:0.5:5.5],'YTick',[-2.5:0.5:2.5]);
+pause;
+legend('curve1','curve2',0);
+title('\bf 09123456 Name','fontsize',16,'fontname','Comic Sans MS');
